@@ -19,8 +19,10 @@ public class MyBatisConfig {
 	public DataSource dataSource() {
 		// DataSource 설정 (HikariCP 또는 다른 데이터베이스 커넥션 풀 사용 가능)
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/test1");
+		//dataSource.setDriverClassName("org.postgresql.Driver");
+		dataSource.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
+		//dataSource.setUrl("jdbc:postgresql://localhost:5432/test1");
+		dataSource.setUrl("jdbc:log4jdbc:postgresql://localhost:5432/test1");
 		dataSource.setUsername("postgres");
 		dataSource.setPassword("1q2w3e4r!");
 		return dataSource;
